@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!------- Deliver Now Webapp Projct Start On 2-June-2023 8.00 AM ------->
+<html lang="en">
+
+<head>
+    <!------- meta tags start ------->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no">
+    <!------- meta tags end ------->
+
+    <!------- website title ------->
+    <title>Deliver Now</title>
+
+    <!------- All website css start ------->
+
+    <!-- Website favicon link -->
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico">
+
+    <!-- Bootstrap 5.3 alpha css link -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.css"> -->
+
+    <!-- Simplebar for smooth scrollbar css link -->
+    <!-- <link rel="stylesheet" type="text/css" href="../assets/css/smooth_scroll.css"> -->
+
+    <!-- website main style css link -->
+    <!-- <link rel="stylesheet" type="text/css" href="../assets/css/delivernow.css"> -->
+
+    <!-- Fontawesome 6.4.0 free css link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Text font Neue Plak css link -->
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/fonts/text_font/neue_plak.css"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!------- All website css end ------->
+</head>
+
+<body>
+    <!------- main container start ------>
+    <div class=" main-container entrypage location">
+        <div class="row mx-0 px-0 justify-content-between h-100">
+            <div class="col-lg-5 col-12 px-5">
+                <div class="entrylogo">
+                    <img src="../../assets/img/bluelogo.png" class="w-100 h-100" alt="">
+                </div>
+
+                <h1 class="text-primary fw-600">To let the site know where you are?</h1>
+
+                <p class="text-muted pe-lg-5 me-lg-5">
+                    Your current location will be displayed on the dashboard and used to show the stores nearby
+                </p>
+
+                <form class="signupform" #signupform="ngForm" (ngSubmit)="onSubmit(signupform)">
+                    <!------- serach location input -------->
+                    <div class="position-relative">
+                        <input type="text" class="form-control" placeholder="Enter your location"
+                         name="inputText" 
+                         [(ngModel)]="inputText"
+                          (input)="onInputChange()" required ngModel>
+
+                        <div class="address_container" *ngIf="input">
+                            <ul class="list-unstyled m-0"  style="height: 100%;" *ngFor="let objj of obj">
+                                <li>
+                                    <a routerLink="." value="{{objj.description}}" (click)="onclick($event.target.value)">
+                                        {{objj.description}}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!------- Get current location button ------->
+                    <a (click)="getCurrentLocation()" class="getcurrentlocation text-primary hoverlineeffect">
+                        <i class="fa-solid fa-location-crosshairs text-warning me-1"></i>
+                        <p class="d-inline-block position-relative mb-0">Get current location</p>
+                    </a>
+
+                    <!------- Submit button ------->
+                    <button routerLink="./login" class="btn btn-primary d-block w-100 fs-2 py-4" [disabled]="!signupform.valid">
+                        Let’s continue
+                    </button>
+                </form>
+            </div>
+
+            <div class="col-lg-7 col-12 px-0 h-100 position-relative">
+                <!------- Banner container ------->
+                <div class="entrypage-banner w-100 h-100" style="background-image: url(../../assets/img/locationbg.png);">
+                </div>
+
+                <!------- Banner layer text ------->
+                <div class="bannerlayertext">
+                    <p class="mb-0">
+                        We are one call away from getting your package delivered to your doorstep
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------- main container end ------>
+
+
+    <!------- All website js link start ------->
+
+    <!-- latest jquery3.7 js link -->
+    <script type="text/js" src="../../assets/js/jquery3.7.js"></script>
+
+    <!-- Bootstrap 5.3 alpha js/bunle js link -->
+    <script type="text/js" src="../../assets/js/bootstrap.bundle.js"></script>
+    <script type="text/js" src="../../assets/js/bootstrap.js"></script>
+
+
+    <!-- Simplebar for smooth scrollbar js link -->
+    <script type="text/js" src="../../assets/js/simplebar.js"></script>
+
+    <!-- Website js link -->
+    <script type="text/js" src="../../assets/js/delivernow.js"></script>
+
+    <!-- Fontawesome 6.4.0 free js link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+        integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!------- All website js link end ------->
+</body>
+
+</html>

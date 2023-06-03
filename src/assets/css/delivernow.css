@@ -1,0 +1,519 @@
+/* ================================== */
+/* page format reset css start */
+/* ================================== */
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* ================================== */
+/* page format reset css end */
+/* ================================== */
+
+
+
+/* ================================== */
+/* Base typography css start */
+/* ================================== */
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: "Neue Plak";
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: #000000;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+input::placeholder {
+    /* color: rgba(9, 19, 64, 0.5); */
+    color: red;
+}
+
+/* ================================== */
+/* Base typography css end */
+/* ================================== */
+
+
+/* =================================== */
+/* website custom classes start */
+/* =================================== */
+
+.fw-600 {
+    font-weight: 600 !important;
+}
+
+.fw-400 {
+    font-weight: 400 !important;
+}
+
+.fw-500 {
+    font-weight: 500 !important;
+}
+
+.f-error {
+    position: absolute !important;
+    font-size: 14px !important;
+    left: 0px !important;
+    bottom: -7px !important;
+    color: red !important;
+    font-weight: 600;
+}
+
+.noafterbefore::before,
+.noafterbefore::after {
+    content: none !important;
+}
+
+.twolinetruncate {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+}
+
+.hoverlineeffect {
+    position: relative;
+}
+
+.hoverlineeffect p::after {
+    content: " ";
+    width: 0%;
+    height: 1px;
+    background: #091340;
+    position: absolute;
+    left: inherit;
+    right: 0;
+    top: inherit;
+    bottom: 1px;
+    margin-left: auto;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+
+.hoverlineeffect:hover p::after {
+    width: 100%;
+    right: inherit;
+    left: 0;
+}
+
+/* =================================== */
+/* website custom classes end */
+/* =================================== */
+
+
+
+/* ==================================== */
+/* Entry Page(Default) css start */
+/* ==================================== */
+
+.entrypage {
+    height: 100vh;
+}
+
+.entrylogo {
+    width: 250px;
+    margin: 50px auto 150px auto;
+}
+
+.entrypage-banner {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100% 35%;
+}
+
+.bannerlayertext {
+    background: rgba(0, 0, 0, 0.6);
+    mix-blend-mode: hard-light;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 35px;
+    top: inherit;
+    font-size: 4rem;
+    font-weight: 600;
+    color: #ffffff;
+    width: 460px;
+    margin: 0 auto;
+    line-height: 55px;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+/* ==================================== */
+/* Entry Page(Default) css start */
+/* ==================================== */
+
+
+/* =========================================== */
+/* Entry Page (Location Page) css start */
+/* =========================================== */
+
+.address_container {
+    background: #FFFFFF;
+    border: 1px solid rgba(9, 19, 64, 0.4);
+    border-radius: 0.1rem;
+    -webkit-border-radius: 0.1rem;
+    -moz-border-radius: 0.1rem;
+    -ms-border-radius: 0.1rem;
+    -o-border-radius: 0.1rem;
+    padding: 10px 5px;
+    max-height: 200px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 85px;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: none;
+    z-index: 10;
+}
+
+.signupform input:focus+.address_container {
+    display: block;
+}
+
+.address_container li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.address_container li a {
+    font-size: 1.7rem;
+    letter-spacing: 0.025em;
+    color: rgba(9, 19, 64, 0.52);
+    text-decoration: none;
+    display: block;
+    font-weight: 600;
+    padding: 5px 20px;
+}
+
+.address_container li a:hover {
+    background-color: #F4F4F4;
+}
+
+.getcurrentlocation {
+    text-decoration: none;
+    color: rgba(9, 19, 64, 0.52);
+    font-size: 2rem;
+    font-weight: 600;
+    display: inline-block;
+    margin: 30px 0px 80px 0px;
+    position: relative;
+}
+
+/* =========================================== */
+/* Entry Page (Location Page) css end */
+/* =========================================== */
+
+
+/* ======================================= */
+/* Entry Page (Login Page) css start */
+/* ======================================= */
+
+.login .entrylogo {
+    margin: 50px auto 80px auto;
+}
+
+.iti.iti--allow-dropdown {
+    width: 100%;
+}
+
+.iti__arrow,
+.iti__flag,
+.iti__flag-box,
+.iti__divider,
+.iti__country.iti__preferred {
+    display: none;
+}
+
+.iti__country {
+    font-size: 1.7rem;
+    letter-spacing: 0.025em;
+    color: rgba(9, 19, 64, 0.52);
+    text-decoration: none;
+    display: block;
+    font-weight: 600;
+    padding: 5px 20px;
+}
+
+.iti__selected-flag {
+    padding: 0px 15px;
+}
+
+.iti--separate-dial-code .iti__selected-dial-code {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.iti__flag-container {
+    padding: 5px;
+}
+
+.iti--separate-dial-code .iti__selected-flag {
+    background-color: transparent;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.iti__selected-flag::after {
+    content: " ";
+    width: 1px;
+    height: 90%;
+    background-color: rgba(9, 19, 64, 0.4);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto 0;
+    display: none;
+}
+
+
+.iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag {
+    background-color: #09134024;
+}
+
+.iti__country-list {
+    border: 1px solid rgba(9, 19, 64, 0.4);
+    background-color: #ffffff;
+    border-radius: 0.1rem;
+    -webkit-border-radius: 0.1rem;
+    -moz-border-radius: 0.1rem;
+    -ms-border-radius: 0.1rem;
+    -o-border-radius: 0.1rem;
+    left: 0;
+    top: 70px;
+    padding: 10px 5px;
+    overflow-x: hidden;
+}
+
+.iti__country-list:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.showhidebutton {
+    border: 0;
+    background-color: transparent;
+    padding: 5px;
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.otheroption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.otheroption a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.sociallogins {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.sociallogins img {
+    width: 40px;
+    display: inline-block;
+}
+
+.sociallogins a {
+    display: inline-block;
+    border: 1px solid rgba(9, 19, 64, 0.4);
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #091340F2;
+    border-radius: 0.1rem;
+    -webkit-border-radius: 0.1rem;
+    -moz-border-radius: 0.1rem;
+    -ms-border-radius: 0.1rem;
+    -o-border-radius: 0.1rem;
+    width: 48%;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.sociallogins a:hover {
+    color: #091340F2;
+    background-color: #09134024;
+}
+
+.login .bannerlayertext {
+    width: 400px;
+    bottom: inherit;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+/*===== Membersip plan card css start =====*/
+.MembershipplanList label {
+    display: block;
+    width: 100%;
+    border: 1px solid rgba(9, 19, 64, 0.4);
+    border-radius: 0.1rem;
+    -webkit-border-radius: 0.1rem;
+    -moz-border-radius: 0.1rem;
+    -ms-border-radius: 0.1rem;
+    -o-border-radius: 0.1rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.MembershipplanList label span {
+    color: #09134066;
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.MembershipplanList input:checked+label {
+    border-color: #FBA705;
+}
+
+.MembershipplanList input:checked+label span {
+    color: #FBA705;
+}
+
+.MembershipplanList label::after {
+    content: " ";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 2px solid #FBA705;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.MembershipplanList label::before {
+    content: " ";
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: #FBA705;
+    right: 18.5px;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    opacity: 0;
+    transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+}
+
+.MembershipplanList input:checked+label::before {
+    opacity: 1;
+}
+
+/*===== Membersip plan card css end =====*/
+
+.guestloginbtn:hover svg,
+.guestloginbtn:hover i {
+    animation: hoverarrow 0.5s ease-out infinite;
+    -webkit-animation: hoverarrow 0.5s ease-out infinite;
+}
+
+@keyframes hoverarrow {
+    0% {
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-5px);
+        -webkit-transform: translateX(-5px);
+        -moz-transform: translateX(-5px);
+        -ms-transform: translateX(-5px);
+        -o-transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+    }
+}
+
+.entryscroll {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 460px;
+}
+
+.entryscroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* ======================================= */
+/* Entry Page (Login Page) css end */
+/* ======================================= */

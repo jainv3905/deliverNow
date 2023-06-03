@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!------- Deliver Now Webapp Projct Start On 26-May-2023 4.00 PM ------->
+<html lang="en">
+
+<head>
+    <!------- meta tags start ------->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no">
+    <!------- meta tags end ------->
+
+    <!------- website title ------->
+    <title>Deliver Now</title>
+
+    <!------- All website css start ------->
+
+    <!-- Website favicon link -->
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico">
+
+    <!-- Bootstrap 5.3 alpha css link -->
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.css"> -->
+
+    <!-- Simplebar for smooth scrollbar css link -->
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/smooth_scroll.css"> -->
+
+    <!-- Input with country code css link (using local file is not possible) -->
+    <link rel="stylesheet" href="https://cdn.tutorialjinni.com/intl-tel-input/17.0.8/css/intlTelInput.css">
+    <!-- </link> -->
+
+    <!-- website main style css link -->
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/delivernow.css"> -->
+
+    <!-- Fontawesome 6.4.0 free css link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Text font Neue Plak css link -->
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/fonts/text_font/neue_plak.css"> -->
+
+    <!------- All website css end ------->
+</head>
+
+<body>
+    <!------- main container start ------>
+    <div class=" main-container entrypage login">
+        <div class="row mx-0 px-0 justify-content-between h-100">
+            <div class="col-lg-5 col-12 px-5">
+                <div class="entrylogo">
+                    <img src="../../assets/img/bluelogo.png" class="w-100 h-100" alt="">
+                </div>
+
+                <h1 class="text-primary fw-600 text-uppercase text-center mb-5 pb-4">Log in to your account</h1>
+
+                <form class="signupform" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                    <!------- serach location input -------->
+                    <div class="position-relative pb-4 mb-4">
+                        <input type="number" id="CountryCode" name="CountryCode" class="form-control"
+                         placeholder="Phone number" required formControlName="CountryCode">
+                        <div class="f-error" *ngIf="myForm.get('CountryCode').touched && myForm.get('CountryCode').errors">
+                            phone must be 10 digit*
+                        </div>
+                    </div>
+
+                    <div class="position-relative pb-4 mb-4">
+                        <input type="password" class="form-control" id="loginpassword" name="loginpassword" placeholder="Password" required formControlName="password">
+                        <button type="button" class="showhidebutton" (click)="myFunction()">
+                            <i class="fa-regular fa-eye-slash d-none"></i>
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+
+                        <div class="f-error" *ngIf="myForm.get('password').touched && myForm.get('password').errors">
+                            password must be greater then 6 digit*
+                        </div>
+                    </div>
+
+                    <div class="otheroption">
+                        <div class="hoverlineeffect">
+                            <p class="mb-0">
+                                <a href="#!">
+                                    Don't have an account ?
+                                </a>
+                            </p>
+                        </div>
+
+                        <div class="hoverlineeffect">
+                            <p class="mb-0">
+                                <a href="#!">
+                                    Forgot password
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <!------- Membership plans ------->
+                    <div class="Membershipplan_container my-5 pt-3 pb-5">
+                        <div
+                            class="Membershiptitleanddetails d-flex justify-content-between align-items-center mb-4">
+                            <h3 class="mb-0">
+                                <a href="#!" class="text-decoration-none text-primary fw-600">
+                                    Choose a membership plan
+                                    <i class="fa-solid fa-star ms-1 text-warning"></i>
+                                </a>
+                            </h3>
+
+                            <h3 class="mb-0">
+                                <a href="#!" class="fw-500 text-success">
+                                    Know more about plan
+                                </a>
+                            </h3>
+                        </div>
+
+                        <div class="MembershipplanList">
+                            <!------- Plan 1 ------->
+                            <input type="radio" class="d-none" id="plan1" value="R199 / Month" formControlName="MembershipPlan1">
+                            <label for="plan1" class="mb-4">
+                                <p class="mb-0 text-primary fw-600 fs-2">Premium member</p>
+                                <span class="mamAmount">R199 / Month</span>
+                            </label>
+
+                            <!------- Plan 2 ------->
+                            <input type="radio" class="d-none" id="plan2" value="R150 / Month" formControlName="MembershipPlan1">
+                            <label for="plan2" class="mb-4">
+                                <p class="mb-0 text-primary fw-600 fs-2">Standard member</p>
+                                <span class="mamAmount">R150 / Month</span>
+                            </label>
+
+                            <!------- Plan 3 ------->
+                            <input type="radio" class="d-none" id="plan3" value="R99 / Month" formControlName="MembershipPlan1">
+                            <label for="plan3" class="mb-4">
+                                <p class="mb-0 text-primary fw-600 fs-2">Basic member</p>
+                                <span class="memAmount">R99 / Month</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="f-error" *ngIf="!radio">
+                        you have to select one payment method
+                    </div>
+                    <!------- Submit button ------->
+                    <button  class="btn btn-primary d-block w-100 fs-2 py-4" [disabled]="!myForm.valid">
+                        Continue to sign in
+                    </button>
+
+                     <!------- Submit button(Continue as a guest) ------->
+                     <button class="btn btn-outline-primary d-block w-100 fs-2 py-4 my-5 guestloginbtn" [disabled]="!myForm.valid">
+                        Continue with guest
+                        <i class="fa-solid fa-arrow-right ms-2 align-middle"></i>
+                     </button>
+                </form>
+
+                <div class="sociallogins">
+                    <a href="#!">
+                        <img src="../../assets/img/appleicon.png" alt="">
+
+                        <span class="d-inline-block ms-3">
+                            Login with apple
+                        </span>
+                    </a>
+
+                    <a (click)="signInWithGoogle()">
+                        <img src="../../assets/img/gogleicon.png" alt="">
+
+                        <span class="d-inline-block ms-3">
+                            Login with google
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-7 col-12 px-0 h-100 position-relative">
+                <!------- Banner container ------->
+                <div class="entrypage-banner w-100 h-100" style="background-image: url(../../assets/img/loginbg.png);">
+                </div>
+
+                <!------- Banner layer text ------->
+                <div class="bannerlayertext">
+                    <p class="mb-0">
+                        Everything you need delivered now with
+                        <span class="text-decoration-underline text-uppercase">Delivernow</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------- main container end ------>
+
+
+    <!------- All website js link start ------->
+
+    <!-- latest jquery3.7 js link -->
+    <script type="text/js" src="../../assets/js/jquery3.7.js"></script>
+
+    <!-- Bootstrap 5.3 alpha js/bunle js link -->
+    <script type="text/js" src="../../assets/js/bootstrap.bundle.js"></script>
+    <!-- <script type="text/js" src="./assets/js/bootstrap.js"></script> -->
+
+
+    <!-- Simplebar for smooth scrollbar js link -->
+    <script type="text/js" src="../../assets/js/simplebar.js"></script>
+
+    <!-- Input with country code css link (using local file is not possible) -->
+    <script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script>
+        var input = document.querySelector("#CountryCode");
+        window.intlTelInput(input, {
+            separateDialCode: true
+        });
+    </script>
+
+    <!-- Website js link -->
+    <script type="text/js" src="./assets/js/delivernow.js"></script>
+
+    <!-- Fontawesome 6.4.0 free js link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+        integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!------- All website js link end ------->
+</body>
+
+</html>
